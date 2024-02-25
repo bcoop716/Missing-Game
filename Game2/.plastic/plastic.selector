@@ -1,0 +1,4 @@
+repository "Game 2@Barret@cloud"
+  path "/"
+    br "/main"
+    co "/main"
