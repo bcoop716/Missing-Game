@@ -33,6 +33,9 @@ public class EnterDoor : MonoBehaviour
     {
         if (enterAllowed && Input.GetKey(KeyCode.Return))
         {
+            //Save the player's position before loading the new scene
+            PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerY", transform.position.y);
             SceneManager.LoadScene(sceneToLoad);
         }
     }
