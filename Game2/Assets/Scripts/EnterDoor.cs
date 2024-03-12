@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class EnterDoor : MonoBehaviour
 {
+
+    
+    
     private bool enterAllowed;
     private string sceneToLoad;
 
