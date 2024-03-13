@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Clue
+  - Floor
+  - Carpet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - LayerMask
   - Water
   - UI
   - 
