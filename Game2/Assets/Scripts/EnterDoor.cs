@@ -31,10 +31,15 @@ public class EnterDoor : MonoBehaviour
             sceneToLoad = "Floor1 left";
             enterAllowed = true;
         }
+        else if (collision.GetComponent<BottomStairs>())
+        {
+            sceneToLoad = "Floor2";
+            enterAllowed = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<RightDoor>() || collision.GetComponent<LeftDoor>())
+        if (collision.GetComponent<RightDoor>() || collision.GetComponent<LeftDoor>() || collision.GetComponent<BottomStairs>())
         {
             enterAllowed = false;
         }
@@ -48,13 +53,8 @@ public class EnterDoor : MonoBehaviour
             PlayerPrefs.SetFloat("PlayerX", transform.position.x);
             PlayerPrefs.SetFloat("PlayerY", transform.position.y);
             
-            //Load the next scene after small delay to play sound
-            Invoke("LoadNextScene", openDoorSound.length); //Adjust delay as needed
+            SceneManager.LoadScene(sceneToLoad);
         }
-    }
-    private void LoadNextScene()
-    {
-        SceneManager.LoadScene(sceneToLoad);
     }
 }
     
