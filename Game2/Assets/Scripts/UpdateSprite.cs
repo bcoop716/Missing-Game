@@ -71,5 +71,5 @@ public class UpdateSprite : MonoBehaviour
 
 public enum CollectableType
 {
-    NONE, G_BOOK, WATER_CAN, SPADE
+    NONE, G_BOOK, WATER_CAN, SPADE, HALF_BROOM, O_HALF_BROOM, PLATE, W_GLOVE, B_HAMMER, C_GOGGLES, EMP_ID, SAW, WORKER_VEST, 
 }
