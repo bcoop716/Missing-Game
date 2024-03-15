@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnCharacter : MonoBehaviour
 {
-    [SerializeField] private Vector2 defaultSpawnPoint = new Vector2(0f, 0f);
     [SerializeField] private GameObject playerObject;
 
     private void Start()
@@ -21,11 +20,7 @@ public class SpawnCharacter : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector2(playerX, playerY);
             
         }
-        else
-        {
-            // If PlayerPrefs values don't exist, set the player's position to the default spawn point
-            player.transform.position = defaultSpawnPoint;
-        }
+        
     
     }
 }
