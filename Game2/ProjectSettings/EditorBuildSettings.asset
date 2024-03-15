@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor 2/Floor2 bottom left Secret.unity
     guid: 528d2423539925144bfa9682a5e4632c
+  - enabled: 1
+    path: Assets/Scenes/Floor 2/Floor2 hidden.unity
+    guid: a2e179c5404b4344db8841c166ecf0c8
   m_configObjects: {}

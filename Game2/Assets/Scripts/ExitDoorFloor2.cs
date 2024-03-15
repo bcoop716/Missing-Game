@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ExitDoorFloor2 : MonoBehaviour
 {
+    public AudioClip openDoorSound;
     private bool exitAllowed;
     private string sceneToLoad;
-
+    private AudioSource audioSource;
+     private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ExitDoorBottomLeft>())
@@ -22,12 +27,27 @@ public class ExitDoorFloor2 : MonoBehaviour
         }
         else if (collision.GetComponent<ExitDoorTopRight>())
         {
+            PlayerPrefs.SetFloat("PlayerXHidden", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerYHidden", transform.position.y);
             sceneToLoad = "Floor2";
             exitAllowed = true;
         }
         else if (collision.GetComponent<ExitDoorBottomRight>())
         {
             sceneToLoad = "Floor2";
+            exitAllowed = true;
+        }
+        else if (collision.GetComponent<SecretEntranceUnderCarpet>())
+        {
+            audioSource.PlayOneShot(openDoorSound);
+            PlayerPrefs.SetFloat("PlayerXHidden", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerYHidden", transform.position.y);
+            sceneToLoad = "Floor2 hidden";
+            exitAllowed = true;
+        }
+        else if (collision.GetComponent<ExitDoorFromHiddenRoom>())
+        {
+            sceneToLoad = "Floor 2 top right";
             exitAllowed = true;
         }
     }
