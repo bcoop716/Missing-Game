@@ -51,6 +51,14 @@ public class ExitDoorFloor2 : MonoBehaviour
             exitAllowed = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<ExitDoorBottomLeft>() || collision.GetComponent<ExitDoorTopLeft>() || collision.GetComponent<ExitDoorTopRight>()
+        || collision.GetComponent<ExitDoorBottomRight>() || collision.GetComponent<SecretEntranceUnderCarpet>() || collision.GetComponent<ExitDoorFromHiddenRoom>())
+        {
+            exitAllowed = false;
+        }
+    }
     private void Update() 
     {
         if (exitAllowed && Input.GetKey(KeyCode.Return))
