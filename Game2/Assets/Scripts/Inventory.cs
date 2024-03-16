@@ -12,6 +12,7 @@ public class Inventory
         public Sprite icon;
         public int count;
         public int maxAllowed;
+        public string description;
 
         public Slot()
         {

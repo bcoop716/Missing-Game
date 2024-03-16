@@ -21,6 +21,13 @@ public class ExitDoorFloor1 : MonoBehaviour
             exitAllowed = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<ExitDoorLeft>() || collision.GetComponent<ExitDoorRight>())
+        {
+            exitAllowed = false;
+        }
+    }
     private void Update() 
     {
         if (exitAllowed && Input.GetKey(KeyCode.Return))
